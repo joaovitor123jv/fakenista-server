@@ -1,6 +1,8 @@
 (ns fakenista-server.handler
   (:require [compojure.core :refer :all]
             [compojure.route :as route]
+            [fakenista-server.gets-handler]
+            [fakenista-server.posts-handler]
             [ring.middleware.json :refer [wrap-json-response wrap-json-params]]
             [ring.util.response :refer [response]]
             [ring.middleware.defaults :refer [wrap-defaults site-defaults]]))
