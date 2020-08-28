@@ -3,10 +3,12 @@
             [compojure.route :as route]
             [fakenista-server.gets-handler]
             [fakenista-server.posts-handler]
+            [fakenista-server.database]
             [ring.middleware.json :refer [wrap-json-response wrap-json-params]]
             [ring.util.response :refer [response]]
             [ring.middleware.defaults :refer [wrap-defaults site-defaults]]))
 
+(fakenista-server.database/connect!)
 
 (defroutes app-routes
   (GET "/levels"          []               (fakenista-server.gets-handler/response-levels))
